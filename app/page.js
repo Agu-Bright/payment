@@ -1,101 +1,201 @@
+"use client";
+import Navbar from "@/components/Navbar";
+import { Avatar, Box, IconButton, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-
+import { useState } from "react";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
 export default function Home() {
+  const [state, setState] = useState("card");
+  const [state2, setState2] = useState("card");
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <>
+      <Navbar />
+      <div style={{ background: "#f4f4f4", padding: "20px 0px" }}>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          sx={{ padding: "10px" }}
+        >
+          <Box sx={{ display: "flex" }}>
+            <Avatar
+              src="/dcrypt.jpg"
+              alt="logo"
+              sx={{ borderRadius: "5px", width: 60, height: 60 }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+            <Box sx={{ marginLeft: "10px" }}>
+              <Typography sx={{ fontWeight: "800" }}>DCRYPT</Typography>
+              <Typography
+                sx={{ fontSize: "0.7em", color: "gray", fontWeight: "500" }}
+              >
+                Subscribe to Premium
+              </Typography>
+            </Box>
+          </Box>
+          <Box>
+            <Typography sx={{ fontWeight: "800" }}>US$35.00</Typography>
+            <Typography
+              sx={{ fontSize: "0.7em", color: "gray", fontWeight: "500" }}
+            >
+              Per Week
+            </Typography>
+          </Box>
+        </Stack>
+        <Stack
+          sx={{ margin: "10px" }}
+          direction="row"
+          justifyContent="space-between"
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            <input
+              style={{
+                border: "1px solid gray",
+                borderRadius: "5px",
+                height: "100%",
+                width: "300px",
+                padding: "5px",
+              }}
+            />
+          </Box>
+          <button
+            style={{
+              border: "1px solid gray",
+              padding: "4px 8px",
+              borderRadius: "6px",
+            }}
+          >
+            Apply
+          </button>
+        </Stack>
+        <Stack
+          sx={{ margin: "10px" }}
+          direction="row"
+          justifyContent="space-between"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          <Typography>Total Due Today</Typography>
+          <Typography>US$35.00</Typography>
+        </Stack>
+      </div>
+      <Box sx={{ padding: "20px 0px" }}>
+        <Stack direction="column" sx={{ margin: "10px" }}>
+          <Typography>Email</Typography>
+
+          <input
+            placeholder="Email Address"
+            style={{
+              border: "1px solid gray",
+              borderRadius: "5px",
+              height: "100%",
+              width: "100%",
+              height: "33.33px",
+              padding: "5px",
+              marginTop: "10px",
+            }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        </Stack>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          sx={{
+            margin: "10px",
+            borderRadius: "5px",
+            background: "#f4f4f4",
+            padding: "3px 5px",
+          }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <Typography
+            onClick={() => setState("card")}
+            sx={{
+              width: "48%",
+              borderRadius: "5px",
+              background: `${state === "card" ? "white" : ""}`,
+              boxShadow: `${state === "card" ? "0.5px 0.5px 2px gray" : ""}`,
+              textAlign: "center",
+              height: "30px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Card
+          </Typography>
+          <Typography
+            onClick={() => setState("paypal")}
+            sx={{
+              width: "48%",
+              borderRadius: "5px",
+              background: `${state === "paypal" ? "white" : ""}`,
+              textAlign: "center",
+              height: "30px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: `${state === "paypal" ? "0.5px 0.5px 2px gray" : ""}`,
+            }}
+          >
+            Paypal
+          </Typography>
+        </Stack>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          sx={{
+            margin: "10px",
+            padding: "3px 5px",
+          }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <Box
+            onClick={() => setState2("card")}
+            sx={{
+              border: `${
+                state2 === "card"
+                  ? "1.5px solid #ff7205"
+                  : "1.5px solid #d4d3d3"
+              }`,
+              width: "48%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "start",
+              padding: "10px",
+              borderRadius: "5px",
+            }}
+          >
+            <Box>
+              <IconButton>
+                <CreditCardIcon />
+              </IconButton>
+              <Typography>Card</Typography>
+            </Box>
+          </Box>
+          <Box
+            onClick={() => setState2("cash")}
+            sx={{
+              border: `${
+                state2 === "cash"
+                  ? "1.5px solid #ff7205"
+                  : "1.5px solid #d4d3d3"
+              }`,
+              width: "48%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "start",
+              padding: "10px",
+              borderRadius: "5px",
+            }}
+          >
+            <Box>
+              <Avatar src="/dollar.png" />
+              <Typography>Cash App Pay</Typography>
+            </Box>
+          </Box>
+        </Stack>
+      </Box>
+    </>
   );
 }
