@@ -195,6 +195,40 @@ export default function Home() {
             </Box>
           </Box>
         </Stack>
+        <Stack
+          direction="column"
+          sx={{
+            margin: "10px",
+            padding: "3px 5px",
+          }}
+        >
+          <Stack>
+            <Typography>Card Number</Typography>
+            <Stack direction="row" justifyContent="space-between">
+              <input
+                placeholder="1234 1234 1234 1234"
+                style={{
+                  borderRadius: "5px",
+                  height: "100%",
+                  // width: "100%",
+                  height: "33.33px",
+                  padding: "5px",
+                  marginTop: "10px",
+                }}
+              />
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <Image src="/visa.png" width={30} height={20} />
+                <Image src="/card.png" width={30} height={20} />
+                <Image src="/card.png" width={30} height={20} />
+                <Image src="/card.png" width={30} height={20} />
+              </Stack>
+            </Stack>
+          </Stack>
+        </Stack>
       </Box>
     </>
   );
