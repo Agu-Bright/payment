@@ -418,6 +418,8 @@ export default function Home() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "flex-start",
+                    width: "70%",
+                    height: "100%",
                   }}
                 >
                   <input
