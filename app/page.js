@@ -7,6 +7,204 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 export default function Home() {
   const [state, setState] = useState("card");
   const [state2, setState2] = useState("card");
+  const [country, setCountry] = useState("United States");
+  const countries = [
+    "Afghanistan",
+    "Albania",
+    "Algeria",
+    "Andorra",
+    "Angola",
+    "Antigua and Barbuda",
+    "Argentina",
+    "Armenia",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",
+    "Bahrain",
+    "Bangladesh",
+    "Barbados",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bhutan",
+    "Bolivia",
+    "Bosnia and Herzegovina",
+    "Botswana",
+    "Brazil",
+    "Brunei",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burundi",
+    "Cabo Verde",
+    "Cambodia",
+    "Cameroon",
+    "Canada",
+    "Central African Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Colombia",
+    "Comoros",
+    "Congo (Congo-Brazzaville)",
+    "Congo (Democratic Republic of the)",
+    "Costa Rica",
+    "Croatia",
+    "Cuba",
+    "Cyprus",
+    "Czechia",
+    "Denmark",
+    "Djibouti",
+    "Dominica",
+    "Dominican Republic",
+    "Ecuador",
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Eswatini (Swaziland)",
+    "Ethiopia",
+    "Fiji",
+    "Finland",
+    "France",
+    "Gabon",
+    "Gambia",
+    "Georgia",
+    "Germany",
+    "Ghana",
+    "Greece",
+    "Grenada",
+    "Guatemala",
+    "Guinea",
+    "Guinea-Bissau",
+    "Guyana",
+    "Haiti",
+    "Honduras",
+    "Hungary",
+    "Iceland",
+    "India",
+    "Indonesia",
+    "Iran",
+    "Iraq",
+    "Ireland",
+    "Israel",
+    "Italy",
+    "Jamaica",
+    "Japan",
+    "Jordan",
+    "Kazakhstan",
+    "Kenya",
+    "Kiribati",
+    "Korea (North)",
+    "Korea (South)",
+    "Kuwait",
+    "Kyrgyzstan",
+    "Laos",
+    "Latvia",
+    "Lebanon",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Madagascar",
+    "Malawi",
+    "Malaysia",
+    "Maldives",
+    "Mali",
+    "Malta",
+    "Marshall Islands",
+    "Mauritania",
+    "Mauritius",
+    "Mexico",
+    "Micronesia",
+    "Moldova",
+    "Monaco",
+    "Mongolia",
+    "Montenegro",
+    "Morocco",
+    "Mozambique",
+    "Myanmar (Burma)",
+    "Namibia",
+    "Nauru",
+    "Nepal",
+    "Netherlands",
+    "New Zealand",
+    "Nicaragua",
+    "Niger",
+    "Nigeria",
+    "North Macedonia",
+    "Norway",
+    "Oman",
+    "Pakistan",
+    "Palau",
+    "Panama",
+    "Papua New Guinea",
+    "Paraguay",
+    "Peru",
+    "Philippines",
+    "Poland",
+    "Portugal",
+    "Qatar",
+    "Romania",
+    "Russia",
+    "Rwanda",
+    "Saint Kitts and Nevis",
+    "Saint Lucia",
+    "Saint Vincent and the Grenadines",
+    "Samoa",
+    "San Marino",
+    "Sao Tome and Principe",
+    "Saudi Arabia",
+    "Senegal",
+    "Serbia",
+    "Seychelles",
+    "Sierra Leone",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "Solomon Islands",
+    "Somalia",
+    "South Africa",
+    "South Sudan",
+    "Spain",
+    "Sri Lanka",
+    "Sudan",
+    "Suriname",
+    "Sweden",
+    "Switzerland",
+    "Syria",
+    "Taiwan",
+    "Tajikistan",
+    "Tanzania",
+    "Thailand",
+    "Timor-Leste",
+    "Togo",
+    "Tonga",
+    "Trinidad and Tobago",
+    "Tunisia",
+    "Turkey",
+    "Turkmenistan",
+    "Tuvalu",
+    "Uganda",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States",
+    "Uruguay",
+    "Uzbekistan",
+    "Vanuatu",
+    "Vatican City",
+    "Venezuela",
+    "Vietnam",
+    "Yemen",
+    "Zambia",
+    "Zimbabwe",
+  ];
+
   return (
     <>
       <Navbar />
@@ -203,30 +401,160 @@ export default function Home() {
           }}
         >
           <Stack>
-            <Typography>Card Number</Typography>
-            <Stack direction="row" justifyContent="space-between">
-              <input
-                placeholder="1234 1234 1234 1234"
-                style={{
-                  borderRadius: "5px",
-                  height: "100%",
-                  // width: "100%",
-                  height: "33.33px",
-                  padding: "5px",
-                  marginTop: "10px",
-                }}
-              />
+            <div>
+              <Typography>Card Number</Typography>
               <Stack
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
+                sx={{
+                  border: "1px solid gray",
+                  borderRadius: "5px",
+                }}
               >
-                <Image src="/visa.png" width={30} height={20} />
-                <Image src="/card.png" width={30} height={20} />
-                <Image src="/card.png" width={30} height={20} />
-                <Image src="/card.png" width={30} height={20} />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    marginBottom: "5px",
+                  }}
+                >
+                  <input
+                    placeholder="1234 1234 1234 1234"
+                    style={{
+                      borderRadius: "5px",
+                      height: "100%",
+                      // width: "100%",
+                      height: "33.33px",
+                      padding: "5px",
+                      marginTop: "10px",
+                    }}
+                  />
+                </Box>
+                <Stack
+                  direction="row"
+                  justifyContent="start"
+                  alignItems="center"
+                >
+                  <Image src="/visa.png" width={30} height={20} />
+                  <Image src="/card.png" width={30} height={20} />
+                  <Image src="/card.png" width={30} height={20} />
+                  <Image src="/card.png" width={30} height={20} />
+                </Stack>
               </Stack>
-            </Stack>
+            </div>
+            <div style={{ marginTop: "10px" }}>
+              <Typography>Full Name</Typography>
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                sx={{
+                  border: "1px solid gray",
+                  borderRadius: "5px",
+                  height: "49.66px",
+                }}
+              >
+                <input
+                  placeholder="First and Last Name"
+                  style={{
+                    borderRadius: "5px",
+                    height: "100%",
+                    width: "100%",
+                    padding: "5px",
+                  }}
+                />
+              </Stack>
+            </div>
+            <div style={{ marginTop: "10px" }}>
+              <Typography>Country or Region</Typography>
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                sx={{
+                  border: "1px solid gray",
+                  borderRadius: "5px",
+                  height: "49.66px",
+                }}
+              >
+                <select
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                >
+                  {countries.map((item, index) => (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </Stack>
+            </div>
+            <div style={{ marginTop: "10px" }}>
+              <Typography>Address</Typography>
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                sx={{
+                  border: "1px solid gray",
+                  borderRadius: "5px",
+                  height: "49.66px",
+                }}
+              >
+                <input
+                  placeholder="Street Address"
+                  style={{
+                    borderRadius: "5px",
+                    height: "100%",
+                    width: "100%",
+                    padding: "5px",
+                  }}
+                />
+              </Stack>
+            </div>
+            <Typography
+              sx={{
+                marginTop: "30px",
+                fontSize: "0.9em",
+                textAlign: "center",
+                color: "gray",
+              }}
+            >
+              Cancel your subscription anytime
+            </Typography>
+            <Typography
+              sx={{
+                marginTop: "30px",
+                fontSize: "0.9em",
+                textAlign: "center",
+                color: "gray",
+              }}
+            >
+              By Joining you agree to DCRYPT's and Whops terms and condition and
+              allow them to charge your card for this payments. You can also
+              cancel your membership{" "}
+            </Typography>
+
+            <button>subscribe</button>
+            <Typography
+              sx={{
+                marginTop: "30px",
+                fontSize: "0.9em",
+                textAlign: "center",
+                color: "gray",
+              }}
+            >
+              <Image
+                src="/security.png"
+                alt="security"
+                width={20}
+                height={20}
+                style={{ display: "inline", color: "gray" }}
+              />{" "}
+              Secured By <span style={{ fontWeight: "800" }}>Whop</span>
+            </Typography>
           </Stack>
         </Stack>
       </Box>
