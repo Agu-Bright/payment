@@ -410,6 +410,7 @@ export default function Home() {
                 sx={{
                   border: "1px solid gray",
                   borderRadius: "5px",
+                  height: "49.66px",
                 }}
               >
                 <Box
@@ -417,7 +418,6 @@ export default function Home() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "flex-start",
-                    marginBottom: "5px",
                   }}
                 >
                   <input
@@ -425,10 +425,9 @@ export default function Home() {
                     style={{
                       borderRadius: "5px",
                       height: "100%",
-                      // width: "100%",
-                      height: "33.33px",
+                      border: "none",
+                      width: "100%",
                       padding: "5px",
-                      marginTop: "10px",
                     }}
                   />
                 </Box>
