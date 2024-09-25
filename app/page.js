@@ -444,6 +444,54 @@ export default function Home() {
                 </Stack>
               </Stack>
             </div>
+            <Stack direction="row" justifyContent="space-between">
+              <div style={{ marginTop: "10px", width: "49%" }}>
+                <Typography>Expire Date</Typography>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  sx={{
+                    border: "1px solid gray",
+                    borderRadius: "5px",
+                    height: "49.66px",
+                  }}
+                >
+                  <input
+                    placeholder="MM/YY"
+                    style={{
+                      borderRadius: "5px",
+                      height: "100%",
+                      width: "100%",
+                      padding: "5px",
+                    }}
+                  />
+                </Stack>
+              </div>
+              <div style={{ marginTop: "10px", width: "49%" }}>
+                <Typography>Security Code</Typography>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  sx={{
+                    border: "1px solid gray",
+                    borderRadius: "5px",
+                    height: "49.66px",
+                  }}
+                >
+                  <input
+                    placeholder="CVC"
+                    style={{
+                      borderRadius: "5px",
+                      height: "100%",
+                      width: "100%",
+                      padding: "5px",
+                    }}
+                  />
+                </Stack>
+              </div>
+            </Stack>
             <div style={{ marginTop: "10px" }}>
               <Typography>Full Name</Typography>
               <Stack
@@ -482,6 +530,12 @@ export default function Home() {
                 <select
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
+                  style={{
+                    background: "white",
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "inherit",
+                  }}
                 >
                   {countries.map((item, index) => (
                     <option key={index} value={item}>
