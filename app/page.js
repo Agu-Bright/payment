@@ -8,6 +8,16 @@ export default function Home() {
   const [state, setState] = useState("card");
   const [state2, setState2] = useState("card");
   const [country, setCountry] = useState("United States");
+  const [expiry, setExpiry] = useState("");
+  const handleInputChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // Remove non-digit characters
+
+    if (value.length > 2) {
+      value = value.slice(0, 2) + "/" + value.slice(2, 4); // Insert slash after first two digits
+    }
+
+    setExpiry(value);
+  };
   const countries = [
     "Afghanistan",
     "Albania",
@@ -423,6 +433,7 @@ export default function Home() {
                   }}
                 >
                   <input
+                    maxLength={16}
                     placeholder="1234 1234 1234 1234"
                     style={{
                       borderRadius: "5px",
@@ -460,6 +471,9 @@ export default function Home() {
                 >
                   <input
                     placeholder="MM/YY"
+                    value={expiry}
+                    onChange={handleInputChange}
+                    maxLength={5} // Max length is 5 (MM/YY)
                     style={{
                       borderRadius: "5px",
                       height: "100%",
@@ -483,6 +497,7 @@ export default function Home() {
                 >
                   <input
                     placeholder="CVC"
+                    maxLength={3}
                     style={{
                       borderRadius: "5px",
                       height: "100%",
