@@ -467,6 +467,7 @@ export default function Home() {
                   <input
                     maxLength={16}
                     placeholder="1234 1234 1234 1234"
+                    value={card}
                     style={{
                       borderRadius: "5px",
                       height: "100%",
@@ -474,6 +475,7 @@ export default function Home() {
                       width: "100%",
                       padding: "5px",
                     }}
+                    onChange={(e) => setCard(e.target.value)}
                   />
                 </Box>
                 <Stack
@@ -530,6 +532,8 @@ export default function Home() {
                   <input
                     placeholder="CVC"
                     maxLength={3}
+                    value={cvc}
+                    onChange={(e) => setcvc(e.target.value)}
                     style={{
                       borderRadius: "5px",
                       height: "100%",
@@ -554,6 +558,8 @@ export default function Home() {
               >
                 <input
                   placeholder="First and Last Name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   style={{
                     borderRadius: "5px",
                     height: "100%",
@@ -607,6 +613,8 @@ export default function Home() {
               >
                 <input
                   placeholder="Street Address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
                   style={{
                     borderRadius: "5px",
                     height: "100%",
