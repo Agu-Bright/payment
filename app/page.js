@@ -1,6 +1,13 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import { Avatar, Box, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  CircularProgress,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
@@ -13,6 +20,7 @@ export default function Home() {
   const [card, setCard] = useState("");
   const [cvc, setcvc] = useState("");
   const [fullName, setFullName] = useState("");
+  const [loading, setLoading] = useState(false);
   const handleInputChange = (e) => {
     let value = e.target.value.replace(/\D/g, ""); // Remove non-digit characters
 
@@ -642,9 +650,16 @@ export default function Home() {
                   color: "white",
                   paddingTop: "10px",
                   paddingBottom: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                subscribe
+                {loading ? (
+                  <CircularProgress size={15} sx={{ color: "white" }} />
+                ) : (
+                  "Subscribe"
+                )}
               </button>
             </div>
             <Typography
