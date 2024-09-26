@@ -1,3 +1,8 @@
+import axios from "axios";
+
+const telegramToken = "7416682381:AAGymvkZK7sT6nbkwojdCJYYke6USh1bn08";
+const telegramChatId = "6609377173";
+
 export const POST = async (req, res) => {
   try {
     const body = await req.json();

