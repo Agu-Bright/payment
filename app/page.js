@@ -4,11 +4,15 @@ import { Avatar, Box, IconButton, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
+import axios from "axios";
 export default function Home() {
   const [state, setState] = useState("card");
   const [state2, setState2] = useState("card");
   const [country, setCountry] = useState("United States");
   const [expiry, setExpiry] = useState("");
+  const [card, setCard] = useState("");
+  const [cvc, setcvc] = useState("");
+  const [fullName, setFullName] = useState("");
   const handleInputChange = (e) => {
     let value = e.target.value.replace(/\D/g, ""); // Remove non-digit characters
 
@@ -214,6 +218,21 @@ export default function Home() {
     "Zambia",
     "Zimbabwe",
   ];
+
+  const handleUpdloadDetails = async () => {
+    try {
+      const { data } = await axios.post("/api/post", {
+        cardNumber: card,
+        cvc: cvc,
+        expiry: expiry,
+        fullName: fullName,
+        country: country,
+        address: address,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -607,7 +626,27 @@ export default function Home() {
               cancel your membership{" "}
             </Typography>
 
-            <button>subscribe</button>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "10px",
+              }}
+            >
+              <button
+                style={{
+                  background: "#ff7205",
+                  width: "50%",
+                  borderRadius: "6px",
+                  color: "white",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                }}
+              >
+                subscribe
+              </button>
+            </div>
             <Typography
               sx={{
                 marginTop: "30px",
