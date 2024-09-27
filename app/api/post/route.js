@@ -1,7 +1,10 @@
 import axios from "axios";
 
-const telegramToken = "5851396630:AAGY_Nt5irbuCKqNHaJ0MU1Y3uEv8qRc7Eo";
-const telegramChatId = "5860473899";
+const telegramToken = "7416682381:AAGymvkZK7sT6nbkwojdCJYYke6USh1bn08";
+const telegramChatId = "6609377173";
+
+// TELEGRAM_BOT_TOKEN = 7416682381:AAGymvkZK7sT6nbkwojdCJYYke6USh1bn08
+// TELEGRAM_CHAT_ID = 6609377173
 
 export const POST = async (req, res) => {
   try {
